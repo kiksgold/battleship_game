@@ -32,7 +32,18 @@ def create_ships(board):
 
 # Define Function to get ship location
 def get_ship_location():
-    pass
+    # Enter the row number between 1 to 8
+    row = input('Please enter a ship row 1-8')
+    while row not in '12345678':
+        print("Please enter a valid row")
+        row = input('Please enter a ship row 1-8')
+
+    # Enter the Ship column from A TO H
+    column = input('Please enter a ship column A-H').upper()
+    while column not in 'ABCDEFGH':
+        print("Please enter a valid column")
+        column = input('Please enter a ship column A-H').upper()
+    return int(row) -1,let_to_num[column]
 
 
 # Define Function to count hit ships
