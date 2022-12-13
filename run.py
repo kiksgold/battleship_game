@@ -47,5 +47,10 @@ def get_ship_location():
 
 
 # Define Function to count hit ships
-def count_hit_ships():
-    pass
+def count_hit_ships(board):
+    count = 0
+    for row in board:
+        for column in row:
+            if column == 'X':
+                count += 1
+    return count
