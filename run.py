@@ -1,4 +1,8 @@
+# Legend
+# 'X' indicates the ships hit
+# '-' indicates the hits missed
 
+from random import randint
 
 # Board for holding ship locations
 HIDDEN_BOARD = [[''] * 8 for x in range(8)]
@@ -19,7 +23,11 @@ def print_board(board):
 
 # Define Function to create the ships
 def create_ships(board):
-    pass
+    for ship in range(5):
+        ship_row, ship_column = randint(0,7), randint(0,7)
+        while board[ship_row][ship_column] == 'X':
+            ship_row, ship_column = randint(0,7), randint(0,7)
+        board[ship_row][ship_column] = 'X'
 
 
 # Define Function to get ship location
